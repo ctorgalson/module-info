@@ -19,11 +19,11 @@ function moduleinfo_drush_command() {
     'description' => dt('Creates a csv file containing the names and versions of all the modules in one or more module directories.'),
     'options' => array(
       'dirs' => array(
-        'description' => dt('A comma-separated list of paths (relative to the site root) of folders to scan for modules.'),
+        'description' => dt('A comma-separated list of paths (relative to the current directory) of folders to scan for modules.'),
         'required' => TRUE,
       ),
       'filepath' => array(
-        'description' => dt('Path (relative to site root) of csv file to generate.'),
+        'description' => dt('Path (relative to the current directory) of csv file to generate.'),
         'required' => TRUE,
       ),
     ),
@@ -52,10 +52,9 @@ function drush_moduleinfo() {
 
     // Loop through as many directories as were passed into --dirs argument.
     foreach ($dirs as $dir) {
-      $directory_path = getcwd() . '/' . $dir;
-      if ($handle = opendir($directory_path)) {
+      if ($handle = opendir($dir)) {
         while (FALSE !== ($module_name = readdir($handle))) {
-          $module_directory = $directory_path . $module_name;
+          $module_directory = $dir . $module_name;
           if (!in_array($module_name, array('.', '..')) && is_dir($module_directory)) {
             // Find and parse info file.
             $info_file_pattern = '%s/%s.info';
@@ -65,7 +64,6 @@ function drush_moduleinfo() {
               _moduleinfo_get_version($module_directory, $module_name),
               $dir,
             );
-            // drush_log($module_name, 'success');
           }
         }
         closedir($handle);
