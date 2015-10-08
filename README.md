@@ -5,7 +5,7 @@ the module name, the module version (if available), and the directory
 the module was found in.
 
 The main idea is to get a quick listing of modules + versions from a
-given module directory when when auditing an existing site--especially
+given module directory when auditing an existing site--especially
 one with more than one modules directory that could contain duplicate
 modules.
 
