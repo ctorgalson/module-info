@@ -12,3 +12,9 @@ modules.
 Use it like this:
 
 `drush mi --folders=sites/all/modules/,sites/default/folders --filepath=./module-list.csv`
+
+## Notes
+
+  - The command does *not* search recursively for modules since most
+    modules that contain other modules are listed on d.o and elsewhere
+    by the main module's name.
