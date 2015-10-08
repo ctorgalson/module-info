@@ -18,4 +18,4 @@ Use it like this:
   - The command does *not* search recursively for modules since most
     modules that contain other modules are listed on d.o and elsewhere
     by the main module's name.
-  - The command only scans the directory paths provided by `--folders`.
+  - The command only scans the directory paths provided by `--dirs`.
