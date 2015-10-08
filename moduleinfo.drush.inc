@@ -111,7 +111,7 @@ function drush_moduleinfo() {
 function _moduleinfo_get_version($module_directory, $module_name) {
   // Prepare sprintf, regex patterns, and figure the default info file name.
   $info_file_pattern = '%s/%s.info';
-  $version_pattern = '/version = "?([6-8]\.x-\d+\.\d+)"?/m';
+  $version_pattern = '/version = "?([67]\.x-\d+\.\d+)"?/m';
   $info_file_name = sprintf($info_file_pattern, $module_directory, $module_name);
 
   // Most modules have a predictable info file name.
