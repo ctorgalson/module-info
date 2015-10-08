@@ -11,10 +11,11 @@ modules.
 
 Use it like this:
 
-`drush mi --folders=sites/all/modules/,sites/default/folders --filepath=./module-list.csv`
+`drush mi --dirs=sites/all/modules/,sites/default/folders --filepath=./module-list.csv`
 
 ## Notes
 
   - The command does *not* search recursively for modules since most
     modules that contain other modules are listed on d.o and elsewhere
     by the main module's name.
+  - The command only scans the directory paths provided by `--folders`.

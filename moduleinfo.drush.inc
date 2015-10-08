@@ -28,7 +28,7 @@ function moduleinfo_drush_command() {
       ),
     ),
     'examples' => array(
-      'drush mi --folders=sites/all/modules/,sites/default/folders --filepath=./module-list.csv' => dt('Creates a csv file, alphabetically ordered by module, showing all modules from `sites/all/modules/`, and `sites/default/modules/`.'),
+      'drush mi --dirs=sites/all/modules/,sites/default/folders --filepath=./module-list.csv' => dt('Creates a csv file, alphabetically ordered by module, showing all modules from `sites/all/modules/`, and `sites/default/modules/`.'),
     ),
     'aliases' => array(
       'mi',
